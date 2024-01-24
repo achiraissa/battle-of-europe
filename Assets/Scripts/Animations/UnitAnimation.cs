@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class UnitAnimation : MonoBehaviour
 {
-    private Animator anim;
-    private Unit unit;
+    Animator anim;
+    Unit unit;
 
-    private void ChooseAnimation(Unit u)
+    void ChooseAnimation(Unit u)
     {
         anim.SetBool("IsIdle", false);
         anim.SetBool("IsMove", false);
