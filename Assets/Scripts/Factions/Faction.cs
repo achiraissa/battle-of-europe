@@ -28,15 +28,4 @@ public class Faction : MonoBehaviour
     [SerializeField] private int stone;
     public int Stone { get { return stone; } set { stone = value; } }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
