@@ -61,5 +61,4 @@ public class Unit : MonoBehaviour
     {
         navAgent = GetComponent<NavMeshAgent>();
     }
-
 }

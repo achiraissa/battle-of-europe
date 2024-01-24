@@ -27,14 +27,12 @@ public class UnitAnimation : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         unit = GetComponent<Unit>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         ChooseAnimation(unit);

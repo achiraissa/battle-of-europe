@@ -27,5 +27,4 @@ public class Faction : MonoBehaviour
     public int Gold { get { return gold; } set { gold = value; } }
     [SerializeField] private int stone;
     public int Stone { get { return stone; } set { stone = value; } }
-
 }
