@@ -823,6 +823,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 344709683478566136, guid: 8a4c878e197176b43a68c7d0029b65d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 640606635}
+    - targetCorrespondingSourceObject: {fileID: 344709683478566136, guid: 8a4c878e197176b43a68c7d0029b65d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 640606637}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4c878e197176b43a68c7d0029b65d3, type: 3}
 --- !u!4 &640606633 stripped
 Transform:
@@ -850,6 +853,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 960
   curUnit: {fileID: -5041798284379864534, guid: 34ec966ed82b1404284f175a5b17de48, type: 3}
+--- !u!114 &640606637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640606634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6171856f03ff0e442a529c953a8872fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1192381214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,7 +1192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 427352, guid: 34ec966ed82b1404284f175a5b17de48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3194771
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 427352, guid: 34ec966ed82b1404284f175a5b17de48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1182,7 +1200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 427352, guid: 34ec966ed82b1404284f175a5b17de48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.75
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 427352, guid: 34ec966ed82b1404284f175a5b17de48, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1229,9 +1247,9 @@ GameObject:
   - component: {fileID: 1801496298}
   - component: {fileID: 1801496297}
   - component: {fileID: 1801496296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundPlane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -20,14 +20,6 @@ public class UnitSelect : MonoBehaviour
         faction = GetComponent<Faction>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        cam = Camera.main;
-        layerMask = LayerMask.GetMask("Unit", "Building", "Resource", "Ground");
-
-        instance = this;
-    }
     private void SelectUnit(RaycastHit hit)
     {
         curUnit = hit.collider.GetComponent<Unit>();
@@ -65,7 +57,13 @@ public class UnitSelect : MonoBehaviour
         ClearAllSelectionVisual();
         curUnit = null;
     }
+    void Start()
+    {
+        cam = Camera.main;
+        layerMask = LayerMask.GetMask("Unit", "Building", "Resource", "Ground");
 
+        instance = this;
+    }
     void Update()
     {
         //mouse down
