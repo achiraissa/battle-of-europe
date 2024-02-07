@@ -73,7 +73,6 @@ public class Unit : MonoBehaviour
     [SerializeField] private float unitWaitTime = 0.1f;
     public float UnitWaitTime { get { return unitWaitTime; } }
 
-
     public void ToggleSelectionVisual(bool flag)
     {
         if (selectionVisual != null)
