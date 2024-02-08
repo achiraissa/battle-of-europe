@@ -5278,7 +5278,7 @@ MonoBehaviour:
     wood: 10
     gold: 20
     stone: 0
-  unitWaitTime: 0.1
+  unitWaitTime: 0.001
 --- !u!114 &-5514381799375609405
 MonoBehaviour:
   m_ObjectHideFlags: 0
