@@ -105,6 +105,28 @@ public class Building : Structure
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.H))
+            ToCreateUnit(1);
+
+        if ((recruitList.Count > 1) && (recruitList[1] != null))
+        {
+            unitTimer += Time.deltaTime;
+            curUnitWaitTime = recruitList[1].UnitWaitTime;
+
+            if (unitTimer >= curUnitWaitTime)
+            {
+                curUnitProgress++;
+                unitTimer = 0f;
+
+                if (curUnitProgress >= 100)
+                {
+                    curUnitProgress = 0;
+                    curUnitWaitTime = 0f;
+                    CreateUnitCompleted();
+                }
+            }
+        }
     }
 
 }
