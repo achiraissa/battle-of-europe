@@ -5260,8 +5260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  unitName: 
-  unitPic: {fileID: 21300000, guid: 5ebe31303f928fb4280c2f9e130da341, type: 3}
+  unitName: Soldier
+  unitPic: {fileID: 21300000, guid: b0f9557c925f2bc488c1e043ef34dadf, type: 3}
   curHP: 100
   maxHP: 100
   moveSpeed: 6
@@ -6309,7 +6309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8341604531004889608, guid: e2a534661d9cca04189f97f5a279ff39, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -10,7 +10,14 @@ public class InfoManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameTxt, hpTxt, rsrcTxt, moveTxt, atkTxt, amrTxt, vslRngTxt, wpRngTxt;
 
     public static InfoManager instance;
-    
+    public void ShowAllInfo(Building building)
+    {
+        SetPic(building.StructurePic);
+        nameTxt.text = building.StructureName;
+
+        hpIcon.color = Color.white;
+        hpTxt.text = $"{building.CurHP}/{building.MaxHP}";
+    }
     private void SetPic(Sprite pic)
     {
         unitPic.color = Color.white;

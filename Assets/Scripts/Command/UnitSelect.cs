@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UnitSelect : MonoBehaviour
 {
     [SerializeField]
     private LayerMask layerMask;
-
+    
+    [SerializeField]
+    private Building curBuilding; //current selected single building
+    public Building CurBuilding { get { return curBuilding; } }
+    
     [SerializeField]
     private Unit curUnit; //current selected single unit
     public Unit CurUnit { get { return curUnit; } }
@@ -47,9 +52,29 @@ public class UnitSelect : MonoBehaviour
                 case "Unit":
                     SelectUnit(hit);
                     break;
+                case "Building":
+                    BuildingSelect(hit);
+                    break;
             }
         }
     }
+    private void ShowBuilding(Building b)
+    {
+        InfoManager.instance.ShowAllInfo(b);
+    }
+
+    private void BuildingSelect(RaycastHit hit)
+    {
+        curBuilding = hit.collider.GetComponent<Building>();
+        curBuilding.ToggleSelectionVisual(true);
+
+        if (GameManager.instance.MyFaction.IsMyBuilding(curBuilding))
+        {
+            //Debug.Log("my building");
+            ShowBuilding(curBuilding);//Show building info
+        }
+    }
+
     private void ShowUnit(Unit u)
     {
         InfoManager.instance.ShowAllInfo(u);
@@ -59,12 +84,16 @@ public class UnitSelect : MonoBehaviour
     {
         if (curUnit != null)
             curUnit.ToggleSelectionVisual(false);
+        if (curBuilding != null)
+            curBuilding.ToggleSelectionVisual(false);
     }
 
     private void ClearEverything()
     {
         ClearAllSelectionVisual();
         curUnit = null;
+        curBuilding = null;
+        
         
         //Clear Ui
         InfoManager.instance.ClearAllInfo();
@@ -81,6 +110,11 @@ public class UnitSelect : MonoBehaviour
         //mouse down
         if (Input.GetMouseButtonDown(0))
         {
+            //if click Ui, don't clear
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             ClearEverything();
         }
 
