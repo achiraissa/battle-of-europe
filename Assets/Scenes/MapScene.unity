@@ -4140,6 +4140,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084b042e9e72f249b9cb7a16f598d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitPic: {fileID: 729639183}
+  hpIcon: {fileID: 2028704260}
+  rsrcIcon: {fileID: 1972870199}
+  moveIcon: {fileID: 584135576}
+  atkIcon: {fileID: 536611225}
+  amrIcon: {fileID: 1468328783}
+  vslRngIcon: {fileID: 78419121}
+  wpRngIcon: {fileID: 1132693200}
+  nameTxt: {fileID: 1489719299}
+  hpTxt: {fileID: 147264350}
+  rsrcTxt: {fileID: 2116850964}
+  moveTxt: {fileID: 1065785046}
+  atkTxt: {fileID: 1518255048}
+  amrTxt: {fileID: 1118895842}
+  vslRngTxt: {fileID: 159614025}
+  wpRngTxt: {fileID: 1182366589}
 --- !u!1 &1244688466
 GameObject:
   m_ObjectHideFlags: 0
@@ -4880,7 +4896,6 @@ GameObject:
   - component: {fileID: 1754256896}
   - component: {fileID: 1754256900}
   - component: {fileID: 1754256899}
-  - component: {fileID: 1754256898}
   - component: {fileID: 1754256897}
   m_Layer: 5
   m_Name: BasicPanel
@@ -4939,18 +4954,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1754256898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754256895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a084b042e9e72f249b9cb7a16f598d21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1754256899
 MonoBehaviour:
   m_ObjectHideFlags: 0
