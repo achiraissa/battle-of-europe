@@ -129,6 +129,11 @@ MonoBehaviour:
   maxHP: 0
   faction: {fileID: 0}
   selectionVisual: {fileID: 8005238862323571739}
+  structureCost:
+    food: 100
+    wood: 100
+    gold: 100
+    stone: 100
   spawnPoint: {fileID: 0}
   rallyPoint: {fileID: 0}
   unitPrefabs: []
@@ -136,6 +141,9 @@ MonoBehaviour:
   unitTimer: 0
   curUnitProgress: 0
   curUnitWaitTime: 0
+  isFunctional: 0
+  isHQ: 0
+  intoTheGround: 5
 --- !u!65 &6909014630600402544
 BoxCollider:
   m_ObjectHideFlags: 0
