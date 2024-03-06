@@ -20,7 +20,14 @@ public class Building : Structure
     [SerializeField] private float curUnitWaitTime = 0f;
 
     [SerializeField] private bool isFunctional;
-    public bool IsFunctional { get { return isFunctional; } set { isFunctional = value; } } 
+    public bool IsFunctional { get { return isFunctional; } set { isFunctional = value; } }
+
+    [SerializeField] private bool isHQ;
+    public bool IsHQ { get { return isHQ; }  }
+
+    //
+    [SerializeField] private float intoTheGround = 5f;
+    public float IntoTheGround { get { return intoTheGround; }}
 
     public void ToCreateUnit(int i)
     {
@@ -64,6 +71,7 @@ public class Building : Structure
         recruitList.RemoveAt(0);
 
         Unit unit = unitObj.GetComponent<Unit>();
+        unit.Faction = faction;
         unit.MoveToPosition(rallyPoint.position); //Go to Rally Point
 
         //Add unit into faction's Army
@@ -83,7 +91,7 @@ public class Building : Structure
     // Start is called before the first frame update
     void Start()
     {
-        curHP = maxHP;
+        
     }
 
     void Update()

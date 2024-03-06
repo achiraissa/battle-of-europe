@@ -19,11 +19,13 @@ public class ActionManager : MonoBehaviour
 
     }
 
+
     private void HideCreateUnitButtons()
     {
         for (int i = 0; i < unitBtns.Length; i++)
             unitBtns[i].gameObject.SetActive(false);
     }
+
 
     private void HideCreateBuildingButtons()
     {
@@ -36,7 +38,7 @@ public class ActionManager : MonoBehaviour
     {
         HideCreateUnitButtons();
         HideCreateBuildingButtons();
-    }
+    } 
 
     private void ShowCreateUnitButtons(Building b)
     {
@@ -50,7 +52,6 @@ public class ActionManager : MonoBehaviour
             }
         }
     }
-
 
     private void ShowCreateBuildingButtons(Unit u) //Showing list of buildings when selecting a single unit
     {
@@ -75,6 +76,7 @@ public class ActionManager : MonoBehaviour
             }
         }
     }
+
     public void ShowCreateUnitMode(Building b)
     {
         ClearAllInfo();
@@ -86,16 +88,21 @@ public class ActionManager : MonoBehaviour
         ClearAllInfo();
         ShowCreateBuildingButtons(unit);
     }
+
+
     public void CreateUnitButton(int n)//Map with Create Unit Btns
     {
-        //Debug.Log("Create " + n);
+       //Debug.Log("Create " + n);
         UnitSelect.instance.CurBuilding.ToCreateUnit(n);
     }
 
     public void CreateBuildingButton(int n)//Map with Create Building Btns
     {
         //Debug.Log("1 - Click Button: " + n);
-    }
+        Unit unit = UnitSelect.instance.CurUnit;
 
+        if(unit.IsBuilder)
+            unit.Builder.ToCreateNewBuilding(n);
+    }
 
 }
