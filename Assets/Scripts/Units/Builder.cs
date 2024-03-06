@@ -156,23 +156,17 @@ public class Builder : MonoBehaviour
     {
         unit = GetComponent<Unit>();
     }
-
-
-    // Update is called once per frame
     void Update()
     {
-        void Update()
+        if (unit.State == UnitState.Die)
+            return;
+
+        if (toBuild) // if this unit is to build something
         {
-            if (unit.State == UnitState.Die)
-                return;
+            GhostBuildingFollowsMouse();
 
-            if (toBuild) // if this unit is to build something
-            {
-                GhostBuildingFollowsMouse();
-
-                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
-                    CancelToBuild();
-            }
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
+                CancelToBuild();
         }
     }
 }
