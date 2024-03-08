@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4398685362008348761}
   - component: {fileID: 540790609783866532}
   - component: {fileID: 2723827751316757272}
-  - component: {fileID: 2091434997917011316}
   m_Layer: 2
   m_Name: Plane
   m_TagString: GhostBuilding
@@ -107,59 +106,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2091434997917011316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811760881741810410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28e8a18546346644da7942b20eada928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBuild: 0
-  modelRdr:
-  - {fileID: 1006263090151804632}
-  - {fileID: 7700470136946785286}
-  - {fileID: 8532127982280139551}
-  - {fileID: 4944574609554740398}
-  - {fileID: 2134479144486283575}
-  - {fileID: 5060263199393622922}
-  - {fileID: 3673108237462469734}
-  - {fileID: 1465749812283330072}
-  - {fileID: 4670958515182766764}
-  - {fileID: 2622733143241632647}
-  - {fileID: 5225314668679250785}
-  - {fileID: 5928216551623037660}
-  - {fileID: 4990248653899287059}
-  - {fileID: 8033192768914573435}
-  - {fileID: 1809748173856755984}
-  - {fileID: 4389884391536800675}
-  - {fileID: 190833249363581926}
-  - {fileID: 4219987810478134216}
-  - {fileID: 8297191007368651148}
-  - {fileID: 3166774281825085679}
-  - {fileID: 5307343611429076413}
-  - {fileID: 6913234352554750757}
-  - {fileID: 5269579698717965369}
-  - {fileID: 1474834368729767699}
-  - {fileID: 2081626303178602358}
-  - {fileID: 5863297705218296677}
-  - {fileID: 6590147936027526215}
-  - {fileID: 1805477658986794234}
-  - {fileID: 2716368131099367927}
-  - {fileID: 4623829311165573924}
-  - {fileID: 3756978988021964319}
-  - {fileID: 8980460692748500811}
-  - {fileID: 946564753562122714}
-  - {fileID: 1111313052510222379}
-  - {fileID: 2008380394703872643}
-  - {fileID: 2247540018942734691}
-  - {fileID: 6169107004286081440}
-  - {fileID: 4418654661656428122}
-  planeRdr: {fileID: 540790609783866532}
 --- !u!1 &4012334775605421268
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +117,7 @@ GameObject:
   - component: {fileID: 6663141434153426321}
   - component: {fileID: 4391787640600402710}
   - component: {fileID: -7375416752182153172}
+  - component: {fileID: 7338111381213835066}
   m_Layer: 2
   m_Name: Headquarter_Ghost
   m_TagString: GhostBuilding
@@ -187,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 4012334775605421268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.6, z: 3.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -243,6 +190,59 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &7338111381213835066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4012334775605421268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e8a18546346644da7942b20eada928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBuild: 0
+  modelRdr:
+  - {fileID: 1006263090151804632}
+  - {fileID: 7700470136946785286}
+  - {fileID: 8532127982280139551}
+  - {fileID: 4944574609554740398}
+  - {fileID: 2134479144486283575}
+  - {fileID: 5060263199393622922}
+  - {fileID: 3673108237462469734}
+  - {fileID: 1465749812283330072}
+  - {fileID: 4670958515182766764}
+  - {fileID: 2622733143241632647}
+  - {fileID: 5225314668679250785}
+  - {fileID: 5928216551623037660}
+  - {fileID: 4990248653899287059}
+  - {fileID: 8033192768914573435}
+  - {fileID: 1809748173856755984}
+  - {fileID: 4389884391536800675}
+  - {fileID: 190833249363581926}
+  - {fileID: 4219987810478134216}
+  - {fileID: 8297191007368651148}
+  - {fileID: 3166774281825085679}
+  - {fileID: 5307343611429076413}
+  - {fileID: 6913234352554750757}
+  - {fileID: 5269579698717965369}
+  - {fileID: 1474834368729767699}
+  - {fileID: 2081626303178602358}
+  - {fileID: 5863297705218296677}
+  - {fileID: 6590147936027526215}
+  - {fileID: 1805477658986794234}
+  - {fileID: 2716368131099367927}
+  - {fileID: 4623829311165573924}
+  - {fileID: 3756978988021964319}
+  - {fileID: 8980460692748500811}
+  - {fileID: 946564753562122714}
+  - {fileID: 1111313052510222379}
+  - {fileID: 2008380394703872643}
+  - {fileID: 2247540018942734691}
+  - {fileID: 6169107004286081440}
+  - {fileID: 4418654661656428122}
+  planeRdr: {fileID: 540790609783866532}
 --- !u!1 &7901342200935634339
 GameObject:
   m_ObjectHideFlags: 0

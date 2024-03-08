@@ -12,6 +12,7 @@ public class FindBuildingSite : MonoBehaviour
     private MeshRenderer[] modelRdr;
     [SerializeField]
     private MeshRenderer planeRdr;
+
     private void SetCanBuild(bool flag)
     {
         if (flag)

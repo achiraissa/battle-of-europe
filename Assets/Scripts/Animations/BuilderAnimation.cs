@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitAnimation : MonoBehaviour
+public class BuilderAnimation : MonoBehaviour
 {
     Animator anim;
     Unit unit;
@@ -11,7 +11,8 @@ public class UnitAnimation : MonoBehaviour
     {
         anim.SetBool("IsIdle", false);
         anim.SetBool("IsMove", false);
-        anim.SetBool("IsAttack", false);
+        anim.SetBool("IsBuild", false);
+        anim.SetBool("IsMoveToBuild", false);
 
         switch (u.State)
         {
@@ -21,10 +22,12 @@ public class UnitAnimation : MonoBehaviour
             case UnitState.Move:
                 anim.SetBool("IsMove", true);
                 break;
-            case UnitState.Attack:
-                anim.SetBool("IsAttack", true);
+            case UnitState.BuildProgress:
+                anim.SetBool("IsBuild", true);
                 break;
-
+            case UnitState.MoveToBuild:
+                anim.SetBool("IsMoveToBuild", true);
+                break;
         }
     }
 

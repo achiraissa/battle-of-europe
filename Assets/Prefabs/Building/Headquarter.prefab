@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4012334775605421268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.6, z: 3.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54,7 +54,7 @@ MonoBehaviour:
   structureName: Building
   structurePic: {fileID: 21300000, guid: 917546df3e53fc04eb0dac275541110b, type: 3}
   curHP: 0
-  maxHP: 0
+  maxHP: 100
   faction: {fileID: 7262288717938313521, guid: 8a4c878e197176b43a68c7d0029b65d3, type: 3}
   selectionVisual: {fileID: 3472921566971677866}
   structureCost:
@@ -67,7 +67,7 @@ MonoBehaviour:
   unitPrefabs:
   - {fileID: 186328, guid: 34ec966ed82b1404284f175a5b17de48, type: 3}
   - {fileID: 195416, guid: 927f36aee2ce7c74fb12a8e50bbc11f0, type: 3}
-  - {fileID: 105566, guid: 0672bc9bb74f6f8488825f0e1bd89b24, type: 3}
+  - {fileID: 110404, guid: d5ff3b278f62f17458053f098eb6c1bd, type: 3}
   recruitList: []
   unitTimer: 0
   curUnitProgress: 0
