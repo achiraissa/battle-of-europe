@@ -101,6 +101,7 @@ public class UnitSelect : MonoBehaviour
         
         //Clear Ui
         InfoManager.instance.ClearAllInfo();
+        ActionManager.instance.ClearAllInfo();
     }
     void Start()
     {

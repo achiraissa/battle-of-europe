@@ -127,7 +127,7 @@ MonoBehaviour:
   structurePic: {fileID: 21300000, guid: d43439c134f6ba545a951f791b07a459, type: 3}
   curHP: 0
   maxHP: 100
-  faction: {fileID: 0}
+  faction: {fileID: 7262288717938313521, guid: 8a4c878e197176b43a68c7d0029b65d3, type: 3}
   selectionVisual: {fileID: 8005238862323571739}
   structureCost:
     food: 100
@@ -204,7 +204,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 8.6050005, y: 4.4680004, z: 5.571}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 4.4680004, z: 0}
   m_TimeToStationary: 0.5
