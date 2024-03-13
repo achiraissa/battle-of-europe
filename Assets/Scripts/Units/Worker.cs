@@ -29,10 +29,12 @@ public class Worker : MonoBehaviour
 
     private float lastGatherTime;
     private Unit unit;
+
     void Start()
     {
         unit = GetComponent<Unit>();
     }
+
     public void ToGatherResource(ResourceSource resource, Vector3 pos)
     {
         curResourceSource = resource;
@@ -49,8 +51,32 @@ public class Worker : MonoBehaviour
         unit.NavAgent.isStopped = false;
         unit.NavAgent.SetDestination(pos);
     }
+    private void CheckForResource()
+    {
+        if (curResourceSource != null) //that resource still exists
+            ToGatherResource(curResourceSource, curResourceSource.transform.position);
+        else
+        {
+            //try to find a new resource
+            curResourceSource = unit.Faction.GetClosestResource(transform.position, carryType);
+
+            //CheckAgain, if found a new one, go to it
+            if (curResourceSource != null)
+                ToGatherResource(curResourceSource, curResourceSource.transform.position);
+
+
+            else //can't find a new one
+            {
+                Debug.Log($"{unit.name} can't find a new tree");
+                unit.SetState(UnitState.Idle);
+            }
+        }
+    }
+
     private void MoveToResourceUpdate()
     {
+        CheckForResource();
+
         if (Vector3.Distance(transform.position, unit.NavAgent.destination) <= 2f)
         {
             if (curResourceSource != null)
@@ -76,6 +102,8 @@ public class Worker : MonoBehaviour
                     carryType = curResourceSource.RsrcType;
                     amountCarry += gatherAmount;
                 }
+                else
+                    CheckForResource();
             }
             else //amount is full, go back to deliver at HQ
                 unit.SetState(UnitState.DeliverToHQ);
@@ -106,6 +134,7 @@ public class Worker : MonoBehaviour
 
             //Debug.Log("Delivered");
         }
+        CheckForResource();
     }
 
     void Update()

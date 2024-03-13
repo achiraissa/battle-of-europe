@@ -23,6 +23,14 @@ public class InfoManager : MonoBehaviour
         unitPic.color = Color.white;
         unitPic.sprite = pic;
     }
+    public void ShowAllInfo(ResourceSource r)
+    {
+        SetPic(r.RsrcPic);
+        nameTxt.text = r.RsrcName;
+        hpIcon.color = Color.white;
+        hpTxt.text = $"{r.Quantity}/{r.MaxQuantity}";
+    }
+
     public void ShowAllInfo(Unit unit)
     {
         SetPic(unit.UnitPic);

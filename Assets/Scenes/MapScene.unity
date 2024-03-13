@@ -230,6 +230,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2597171}
   m_CullTransparentMesh: 1
+--- !u!1001 &14440460
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2135988338}
+    m_Modifications:
+    - target: {fileID: 1638305729631902, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_Name
+      value: TreeWood (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
 --- !u!1 &24244269
 GameObject:
   m_ObjectHideFlags: 0
@@ -4426,6 +4483,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810017862}
   m_CullTransparentMesh: 1
+--- !u!1001 &885614407
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2135988338}
+    m_Modifications:
+    - target: {fileID: 1638305729631902, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_Name
+      value: TreeWood (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
 --- !u!1 &918938951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6284,6 +6398,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316732625}
   m_CullTransparentMesh: 1
+--- !u!4 &1336399113 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+  m_PrefabInstance: {fileID: 14440460}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1381319366 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4450838186012284, guid: 7c5e837e9a9ecfc4d9d03be486c1df0b, type: 3}
+  m_PrefabInstance: {fileID: 885614407}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1468328781
 GameObject:
   m_ObjectHideFlags: 0
@@ -8747,6 +8871,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 944153903}
+  - {fileID: 1336399113}
+  - {fileID: 1381319366}
   m_Father: {fileID: 488428471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
