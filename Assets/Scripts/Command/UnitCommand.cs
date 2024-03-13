@@ -32,9 +32,26 @@ public class UnitCommand : MonoBehaviour
                 case "Ground":
                     CommandToGround(hit, unitSelect.CurUnit);
                     break;
+                case "Resource":
+                    ResourceCommand(hit, unitSelect.CurUnit);
+                    break ;
             }
         }
     }
+
+    private void UnitsToGatherResource(ResourceSource resource, Unit unit)
+    {
+        if (unit.IsWorker)
+            unit.Worker.ToGatherResource(resource, resource.transform.position);
+        else
+            unit.MoveToPosition(resource.transform.position);
+    }
+    private void ResourceCommand(RaycastHit hit, Unit unit)
+    {
+        UnitsToGatherResource(hit.collider.GetComponent<ResourceSource>(), unit);
+        CreateVFXMarker(hit.transform.position, MainUI.instance.SelectionMarker);
+    }
+
     private void CreateVFXMarker(Vector3 pos, GameObject vfxPrefab)
     {
         if (vfxPrefab == null)

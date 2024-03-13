@@ -73,7 +73,7 @@ MonoBehaviour:
   curUnitProgress: 0
   curUnitWaitTime: 0
   isFunctional: 1
-  isHQ: 0
+  isHQ: 1
   intoTheGround: 5
 --- !u!65 &4391787640600402710
 BoxCollider:
