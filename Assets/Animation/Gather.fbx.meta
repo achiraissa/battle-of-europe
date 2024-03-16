@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76f5f6ca664500a478d9e98959080c58
+guid: fc25d6d1c18dea54dbd1a2456a41342d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -143,7 +143,7 @@ ModelImporter:
     400134: Retargeters
     400136: RightHandIK
     400138: RightHandProp
-    7400000: Villager@Hammer-Working03
+    7400000: Villager@Axe-Chopping02
     9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
@@ -175,10 +175,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Villager@Hammer-Working03
+      name: Villager@Axe-Chopping02
       takeName: Default Take
       firstFrame: 0
-      lastFrame: 16
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -371,7 +371,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
