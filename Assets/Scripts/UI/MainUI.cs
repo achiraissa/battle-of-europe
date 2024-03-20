@@ -9,6 +9,9 @@ public class MainUI : MonoBehaviour
     private GameObject selectionMarker;
     public GameObject SelectionMarker { get { return selectionMarker ; } }
 
+    [SerializeField] private RectTransform selectionBox;
+    public RectTransform SelectionBox { get { return selectionBox; } }
+
     public static MainUI instance;
 
     [SerializeField] private TextMeshProUGUI unitCountText;

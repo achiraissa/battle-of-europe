@@ -13,8 +13,8 @@ public class UnitSelect : MonoBehaviour
     public Building CurBuilding { get { return curBuilding; } }
     
     [SerializeField]
-    private Unit curUnit; //current selected single unit
-    public Unit CurUnit { get { return curUnit; } }
+    private List<Unit> curUnits; //current selected Multiple Units
+    public List<Unit> CurUnits { get { return curUnits; } }
 
     [SerializeField]
     private ResourceSource curResource; //current selected resource
@@ -23,6 +23,7 @@ public class UnitSelect : MonoBehaviour
     private Faction faction;
 
     public static UnitSelect instance;
+
     void Awake()
     {
         faction = GetComponent<Faction>();
@@ -30,15 +31,15 @@ public class UnitSelect : MonoBehaviour
 
     private void SelectUnit(RaycastHit hit)
     {
-        curUnit = hit.collider.GetComponent<Unit>();
-
-        curUnit.ToggleSelectionVisual(true);
-
+        Unit unit = hit.collider.GetComponent<Unit>();
+        
         Debug.Log("Selected Unit");
 
-        if (GameManager.instance.MyFaction.IsMyUnit(curUnit))
+        if (GameManager.instance.MyFaction.IsMyUnit(unit))
         {
-            ShowUnit(curUnit);
+            curUnits.Add(unit);
+            unit.ToggleSelectionVisual(true);
+            ShowUnit(unit);
         }
     }
     private void ShowResource()
@@ -107,8 +108,9 @@ public class UnitSelect : MonoBehaviour
 
     private void ClearAllSelectionVisual()
     {
-        if (curUnit != null)
-            curUnit.ToggleSelectionVisual(false);
+        foreach (Unit u in curUnits)
+            u.ToggleSelectionVisual(false);
+
         if (curBuilding != null)
             curBuilding.ToggleSelectionVisual(false);
         if (curResource != null)
@@ -118,7 +120,9 @@ public class UnitSelect : MonoBehaviour
     private void ClearEverything()
     {
         ClearAllSelectionVisual();
-        curUnit = null;
+        
+        curUnits.Clear();
+
         curBuilding = null;
         
         
