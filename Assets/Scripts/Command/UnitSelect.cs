@@ -130,7 +130,7 @@ public class UnitSelect : MonoBehaviour
         foreach (Unit u in curUnits)
             u.ToggleSelectionVisual(false);
 
-        if (curBuilding != null)
+        if (curBuilding != null) 
             curBuilding.ToggleSelectionVisual(false);
         if (curResource != null)
             curResource.ToggleSelectionVisual(false);

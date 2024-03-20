@@ -38,6 +38,9 @@ public class UnitCommand : MonoBehaviour
                 case "Resource":
                     ResourceCommand(hit, unitSelect.CurUnits);
                     break ;
+                case "Unit":
+                    CommandToUnit(hit, unitSelect.CurUnits);
+                    break;
             }
         }
     }
@@ -52,6 +55,26 @@ public class UnitCommand : MonoBehaviour
                 u.MoveToPosition(resource.transform.position);
         }
     }
+
+    private void UnitAttackEnemy(Unit enemy, List<Unit> units)
+    {
+        foreach (Unit u in units)
+        {
+            u.ToAttackUnit(enemy);
+        }
+    }
+
+    private void CommandToUnit(RaycastHit hit, List<Unit> units)
+    {
+        Unit target = hit.collider.gameObject.GetComponent<Unit>();
+
+        if (target == null)
+            return;
+
+        if (target.Faction == GameManager.instance.EnemyFaction)// if it is our enemy
+            UnitAttackEnemy(target, units);
+    }
+
     private void ResourceCommand(RaycastHit hit, List<Unit> units)
     {
         UnitsToGatherResource(hit.collider.GetComponent<ResourceSource>(), units);
