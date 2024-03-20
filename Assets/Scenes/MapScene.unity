@@ -1929,7 +1929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4491627354618017983, guid: 9abcdfe0f254c1240b02c247a9f9686b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.6040573
+      value: -22.097605
       objectReference: {fileID: 0}
     - target: {fileID: 4491627354618017983, guid: 9abcdfe0f254c1240b02c247a9f9686b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7365,7 +7365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4491627354618017983, guid: 9abcdfe0f254c1240b02c247a9f9686b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.7088165
+      value: -22.202364
       objectReference: {fileID: 0}
     - target: {fileID: 4491627354618017983, guid: 9abcdfe0f254c1240b02c247a9f9686b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8509,6 +8509,10 @@ PrefabInstance:
       propertyPath: faction
       value: 
       objectReference: {fileID: 1689439909}
+    - target: {fileID: 311478880600129485, guid: 9abcdfe0f254c1240b02c247a9f9686b, type: 3}
+      propertyPath: attackRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4491627354617768511, guid: 9abcdfe0f254c1240b02c247a9f9686b, type: 3}
       propertyPath: m_Name
       value: FrenchSoldier
@@ -8523,7 +8527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4491627354618017983, guid: 9abcdfe0f254c1240b02c247a9f9686b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.5064526
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 4491627354618017983, guid: 9abcdfe0f254c1240b02c247a9f9686b, type: 3}
       propertyPath: m_LocalRotation.w
