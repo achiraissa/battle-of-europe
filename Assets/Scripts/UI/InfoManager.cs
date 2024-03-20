@@ -54,6 +54,15 @@ public class InfoManager : MonoBehaviour
         wpRngIcon.color = Color.white;
         wpRngTxt.text = $"{unit.WeaponRange}";
     }
+    public void ShowEnemyAllInfo(Unit unit)
+    {
+        SetPic(unit.UnitPic);
+        nameTxt.text = unit.UnitName;
+
+        hpIcon.color = Color.white;
+        hpTxt.text = $"{unit.CurHP}/{unit.MaxHP}";
+    }
+
     public void ClearAllInfo()
     {
         //Clear Pic

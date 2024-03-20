@@ -17,6 +17,9 @@ public class UnitSelect : MonoBehaviour
     public List<Unit> CurUnits { get { return curUnits; } }
 
     [SerializeField]
+    private Unit curEnemy;
+
+    [SerializeField]
     private RectTransform selectionBox;
     private Vector2 oldAnchoredPos;//Box old anchored position
     private Vector2 startPos;//point where mouse is down
@@ -46,6 +49,13 @@ public class UnitSelect : MonoBehaviour
             unit.ToggleSelectionVisual(true);
             ShowUnit(unit);
         }
+        else
+        {
+            //Single Enemy
+            curEnemy = unit;
+            curEnemy.ToggleSelectionVisual(true);
+            ShowEnemyUnit(unit);
+        }
     }
     private void ShowResource()
     {
@@ -62,6 +72,10 @@ public class UnitSelect : MonoBehaviour
         ShowResource();//Show resource info
     }
 
+    private void ShowEnemyUnit(Unit u)
+    {
+        InfoManager.instance.ShowEnemyAllInfo(u);
+    }
 
     private void TrySelect(Vector2 screenPos)
     {
@@ -120,6 +134,8 @@ public class UnitSelect : MonoBehaviour
             curBuilding.ToggleSelectionVisual(false);
         if (curResource != null)
             curResource.ToggleSelectionVisual(false);
+        if (curEnemy != null)
+            curEnemy.ToggleSelectionVisual(false);
     }
 
     private void ClearEverything()
