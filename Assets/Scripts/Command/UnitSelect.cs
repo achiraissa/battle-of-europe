@@ -112,8 +112,12 @@ public class UnitSelect : MonoBehaviour
 
         if (GameManager.instance.MyFaction.IsMyBuilding(curBuilding))
         {
-            //Debug.Log("my building");
+            Debug.Log("my building");
             ShowBuilding(curBuilding);//Show building info
+        }
+        else
+        {
+            ShowEnemyBuilding(curBuilding);
         }
     }
 
@@ -167,7 +171,10 @@ public class UnitSelect : MonoBehaviour
         //store old position for real unit selection
         oldAnchoredPos = selectionBox.anchoredPosition;
     }
-
+    private void ShowEnemyBuilding(Building b)
+    {
+        InfoManager.instance.ShowEnemyAllInfo(b);
+    }
     private void ReleaseSelectionBox(Vector2 mousePos)
     {
         //Debug.Log("Step 2 - " + _doubleClickMode);

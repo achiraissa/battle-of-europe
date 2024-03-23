@@ -41,6 +41,9 @@ public class UnitCommand : MonoBehaviour
                 case "Unit":
                     CommandToUnit(hit, unitSelect.CurUnits);
                     break;
+                case "Building":
+                    BuildingCommand(hit, unitSelect.CurUnits);
+                    break;
             }
         }
     }
@@ -87,6 +90,25 @@ public class UnitCommand : MonoBehaviour
             return;
 
         Instantiate(vfxPrefab, new Vector3(pos.x, 0.1f, pos.z), Quaternion.identity);
+    }
+    private void BuildingCommand(RaycastHit hit, List<Unit> units)
+    {
+        Building building = hit.collider.gameObject.GetComponent<Building>();
+
+        if (building == null)
+            return;
+
+        // if it is an enemy's building
+        if (building.Faction == GameManager.instance.EnemyFaction)
+            UnitAttackEnemyBuilding(building, units);
+    }
+
+    private void UnitAttackEnemyBuilding(Building enemyBuilding, List<Unit> units)
+    {
+        foreach (Unit u in units)
+        {
+            u.ToAttackBuilding(enemyBuilding);
+        }
     }
 
     void Awake()

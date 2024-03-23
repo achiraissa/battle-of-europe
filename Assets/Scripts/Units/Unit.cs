@@ -15,6 +15,8 @@ public enum UnitState
     DeliverToHQ,
     StoreAtHQ,
     MoveToEnemy,
+    MoveToEnemyBuilding,
+    AttackBuilding,
     Die
 }
 
@@ -105,6 +107,8 @@ public class Unit : MonoBehaviour
     [SerializeField]
     private float lastAttackTime;
 
+    [SerializeField]
+    private Building curEnemyBuildingTarget;
 
     [SerializeField]
     private float pathUpdateRate = 1.0f;
@@ -264,7 +268,68 @@ public class Unit : MonoBehaviour
             //Debug.Log($"{unitName} - From Attack Update");
         }
     }
+    // move to an enemy building and attack them
+    public void ToAttackBuilding(Building target)
+    {
+        curEnemyBuildingTarget = target;
+        SetState(UnitState.MoveToEnemyBuilding);
+    }
+    // called every frame the 'MoveToEnemyBuilding' state is active
+    private void MoveToEnemyBuildingUpdate()
+    {
+        if (curEnemyBuildingTarget == null)
+        {
+            SetState(UnitState.Idle);
+            return;
+        }
 
+        if (Time.time - lastPathUpdateTime > pathUpdateRate)
+        {
+            lastPathUpdateTime = Time.time;
+            navAgent.isStopped = false;
+            navAgent.SetDestination(curEnemyBuildingTarget.transform.position);
+        }
+
+        if ((Vector3.Distance(transform.position, curEnemyBuildingTarget.transform.position) - 4f) <= WeaponRange)
+        {
+            SetState(UnitState.AttackBuilding);
+        }
+    }
+
+    private void AttackBuildingUpdate()
+    {
+        // if our target is dead, go idle
+        if (curEnemyBuildingTarget == null)
+        {
+            SetState(UnitState.Idle);
+            return;
+        }
+
+        // if we're still moving, stop
+        if (!navAgent.isStopped)
+        {
+            navAgent.isStopped = true;
+        }
+
+        // look at the enemy
+        LookAt(curEnemyBuildingTarget.transform.position);
+
+        // attack every 'attackRate' seconds
+        if (Time.time - lastAttackTime > attackRate)
+        {
+            lastAttackTime = Time.time;
+
+            curEnemyBuildingTarget.TakeDamage(UnityEngine.Random.Range(minWpnDamage, maxWpnDamage + 1));
+        }
+
+
+
+        // if we're too far away, move towards the enemy's building
+        if ((Vector3.Distance(transform.position, curEnemyBuildingTarget.transform.position) - 4f) > WeaponRange)
+        {
+            SetState(UnitState.MoveToEnemyBuilding);
+        }
+    }   
 
     void Awake()
     {
@@ -288,6 +353,12 @@ public class Unit : MonoBehaviour
                 break;
             case UnitState.AttackUnit:
                 AttackUpdate();
+                break;
+            case UnitState.MoveToEnemyBuilding:
+                MoveToEnemyBuildingUpdate();
+                break;
+            case UnitState.AttackBuilding:
+                AttackBuildingUpdate();
                 break;
         }
     }
