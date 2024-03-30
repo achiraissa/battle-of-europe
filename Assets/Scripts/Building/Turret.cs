@@ -13,12 +13,13 @@ public class Turret : Building
     [SerializeField] private LayerMask unitLayerMask;
     [SerializeField] private GameObject targetUnit;
 
-    [SerializeField] private float detectRange = 60f;
-    [SerializeField] private float shootRange = 50f;
-    [SerializeField] private int shootDamage = 10;
+    [SerializeField] private float detectRange = 100f;
+    [SerializeField] private float shootRange = 100f;
+    [SerializeField] private int shootDamage = 20;
     public int ShootDamage { get { return shootDamage; } }
 
     [SerializeField] TurretState state = TurretState.Idle;
+
     // checks for nearby enemies with a sphere cast
     protected Unit CheckForNearbyEnemies()
     {

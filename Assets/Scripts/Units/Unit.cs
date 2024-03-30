@@ -153,6 +153,7 @@ public class Unit : MonoBehaviour
         curEnemyBuildingTarget = turret;
         SetState(UnitState.MoveToEnemyBuilding);
     }
+
     // called when an enemy turret attacks us
     public void TakeDamage(Turret turret, int damage)
     {
