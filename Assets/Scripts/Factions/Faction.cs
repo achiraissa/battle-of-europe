@@ -43,18 +43,19 @@ public class Faction : MonoBehaviour
     [SerializeField] private Transform ghostBuildingParent;
     public Transform GhostBuildingParent { get { return ghostBuildingParent; } }
 
-    [SerializeField] private GameObject[] buildingPrefabs;
-    public GameObject[] BuildingPrefabs { get { return buildingPrefabs; } }
-
-    [SerializeField] private GameObject[] unitPrefabs;
-    public GameObject[] UnitPrefabs { get { return unitPrefabs; } }
-
     [SerializeField]
     private Transform startPosition; //start position for Faction
     public Transform StartPosition { get { return startPosition; } }
 
     [SerializeField]
     private int newResourceRange = 50; //range for worker to find new resource
+    [SerializeField] private GameObject[] buildingPrefabs;
+    public GameObject[] BuildingPrefabs { get { return buildingPrefabs; } }
+
+    [SerializeField] private GameObject[] unitPrefabs;
+    public GameObject[] UnitPrefabs { get { return unitPrefabs; } }
+
+    
 
     private int unitLimit = 6; //Initial unit limit
     public int UnitLimit { get { return unitLimit; } }
