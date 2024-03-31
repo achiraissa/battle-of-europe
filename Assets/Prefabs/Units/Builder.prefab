@@ -543,7 +543,7 @@ MonoBehaviour:
   ghostBuildingList:
   - {fileID: 4012334775605421268, guid: d4b2187b0e8cebe45bf587840304e29c, type: 3}
   - {fileID: 4117504979546753906, guid: 54b9144f03809504b9acc9941b34339c, type: 3}
-  - {fileID: 3544441846941169988, guid: 7ecd60881ca2d5a41b727467eb8bdb86, type: 3}
+  - {fileID: 3544441846941169988, guid: f0c2c37f0aec3d343bac13afe90c1819, type: 3}
   - {fileID: 3848080451527176375, guid: ff2c3126feba15b47bf0d181209e19b0, type: 3}
   newBuilding: {fileID: 0}
   ghostBuilding: {fileID: 0}
