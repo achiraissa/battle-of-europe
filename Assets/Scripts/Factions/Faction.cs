@@ -55,8 +55,6 @@ public class Faction : MonoBehaviour
     [SerializeField] private GameObject[] unitPrefabs;
     public GameObject[] UnitPrefabs { get { return unitPrefabs; } }
 
-    
-
     private int unitLimit = 6; //Initial unit limit
     public int UnitLimit { get { return unitLimit; } }
     private int housingUnitNum = 5; //number of units per each housing
@@ -163,6 +161,7 @@ public class Faction : MonoBehaviour
         if (this == GameManager.instance.MyFaction)
             MainUI.instance.UpdateAllResource(this);
     }
+
     // gets the closest resource to the position (random between nearest 3 for some variance)
     public ResourceSource GetClosestResource(Vector3 pos, ResourceType rType)
     {
@@ -202,6 +201,28 @@ public class Faction : MonoBehaviour
             }
         }
         return closest[UnityEngine.Random.Range(0, closest.Length)];
+    }
+
+    public bool CheckUnitCost(int i)
+    {
+        Unit unit = unitPrefabs[i].GetComponent<Unit>();
+
+        if (unit == null)
+            return false;
+
+        if (food < unit.UnitCost.food)
+            return false;
+
+        if (wood < unit.UnitCost.wood)
+            return false;
+
+        if (gold < unit.UnitCost.gold)
+            return false;
+
+        if (stone < unit.UnitCost.stone)
+            return false;
+
+        return true;
     }
 
     public bool IsMyUnit(Unit u)
