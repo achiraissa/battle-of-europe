@@ -118,7 +118,8 @@ public class Faction : MonoBehaviour
         else if (unitLimit < 0)
             unitLimit = 0;
 
-        MainUI.instance.UpdateAllResource(this);
+        if(this == GameManager.instance.MyFaction)
+            MainUI.instance.UpdateAllResource(this);
     }
 
     public bool CheckUnitCost(Unit unit)
@@ -241,4 +242,8 @@ public class Faction : MonoBehaviour
         return aliveBuildings.Contains(b);
     }
 
+    void Start()
+    {
+        UpdateHousingLimit();
+    }
 }
