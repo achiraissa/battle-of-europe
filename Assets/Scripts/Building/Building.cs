@@ -94,6 +94,19 @@ public class Building : Structure
         if (faction == GameManager.instance.MyFaction)
             MainUI.instance.UpdateAllResource(faction);
     }
+
+    public int CheckNumInRecruitList(int id)
+    {
+        int num = 0;
+
+        foreach (Unit u in recruitList)
+        {
+            if (id == u.ID)
+                num++;
+        }
+        return num;
+    }
+
     public void ToggleSelectionVisual(bool flag)
     {
         if (SelectionVisual != null)
