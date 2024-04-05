@@ -3958,7 +3958,7 @@ PrefabInstance:
     - target: {fileID: 7262288717938313521, guid: 8a4c878e197176b43a68c7d0029b65d3, type: 3}
       propertyPath: aliveBuildings.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2128155931}
     - target: {fileID: 7262288717938313521, guid: 8a4c878e197176b43a68c7d0029b65d3, type: 3}
       propertyPath: aliveBuildings.Array.data[2]
       value: 
