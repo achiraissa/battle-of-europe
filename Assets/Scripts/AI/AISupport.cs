@@ -54,10 +54,13 @@ public class AISupport : MonoBehaviour
         {
             if(b == null)
                 continue;
+
             if(b.IsHQ)
                 hq.Add(b.gameObject);
+
             if (b.IsHousing)
                 houses.Add(b.gameObject);
+
             if (b.IsBarrack)
                 barracks.Add(b.gameObject);
 
