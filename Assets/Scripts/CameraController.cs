@@ -62,6 +62,11 @@ public class CameraController : MonoBehaviour
         Rotate(); 
     }
 
+    public void FocusOnPosition(Vector3 pos)
+    {
+        transform.position = pos;
+    }
+
     private void MoveByKB()
     {
         xInput = Input.GetAxis("Horizontal");
