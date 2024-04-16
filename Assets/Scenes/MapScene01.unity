@@ -8875,7 +8875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4734490232529270793, guid: 770419ad63ed693449bc858acbf2dd7d, type: 3}
       propertyPath: factions.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4734490232529270793, guid: 770419ad63ed693449bc858acbf2dd7d, type: 3}
       propertyPath: factions.Array.data[0]

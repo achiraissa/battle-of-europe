@@ -70,6 +70,9 @@ public class ResourceSource : MonoBehaviour
     void Start()
     {
         onRsrcQuantityChange.Invoke();
+
+        onInfoQuantityChange.AddListener( delegate { InfoManager.instance.ShowAllInfo(this); } );
+        onInfoQuantityChange.AddListener(() => InfoManager.instance.ShowAllInfo(this));
     }
     void Update()
     {

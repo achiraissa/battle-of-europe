@@ -13,7 +13,7 @@ public class UnitSelect : MonoBehaviour
     public Building CurBuilding { get { return curBuilding; } }
     
     [SerializeField]
-    private List<Unit> curUnits; //current selected Multiple Units
+    private List<Unit> curUnits = new List<Unit>();
     public List<Unit> CurUnits { get { return curUnits; } }
 
     [SerializeField]
