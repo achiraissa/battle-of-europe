@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private string newScene;
 
-    public void StartGame()
+    public void NewGame()
     {
         SceneManager.LoadScene(newScene);
     }

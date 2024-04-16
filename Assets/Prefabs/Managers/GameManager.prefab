@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myFaction: {fileID: 0}
-  enemyFaction: {fileID: 7262288717938313521, guid: ba83a78484c499d41bdc472841f7c045, type: 3}
+  enemyFaction: {fileID: 0}
   factions:
   - {fileID: 0}
-  - {fileID: 7262288717938313521, guid: ba83a78484c499d41bdc472841f7c045, type: 3}
+  - {fileID: 0}
