@@ -5141,6 +5141,7 @@ GameObject:
   - component: {fileID: -1769984766025343498}
   - component: {fileID: -687039247123547900}
   - component: {fileID: -5041798284379864534}
+  - component: {fileID: 2812749289878195502}
   - component: {fileID: -5514381799375609405}
   - component: {fileID: -4244863173757115744}
   m_Layer: 6
@@ -5291,6 +5292,18 @@ MonoBehaviour:
   curEnemyBuildingTarget: {fileID: 0}
   pathUpdateRate: 1
   lastPathUpdateTime: 0
+--- !u!114 &2812749289878195502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf20fed5851c30b418d69140943b2aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-5514381799375609405
 MonoBehaviour:
   m_ObjectHideFlags: 0

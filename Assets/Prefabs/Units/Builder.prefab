@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: -1540965928514028673}
   - component: {fileID: 3566828346931996470}
   - component: {fileID: -7245321846971128289}
+  - component: {fileID: 8775098089554007823}
   - component: {fileID: 668237446611877778}
   - component: {fileID: 5201583148907500723}
   - component: {fileID: -7425551120446652093}
@@ -521,6 +522,18 @@ MonoBehaviour:
   curEnemyBuildingTarget: {fileID: 0}
   pathUpdateRate: 1
   lastPathUpdateTime: 0
+--- !u!114 &8775098089554007823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf20fed5851c30b418d69140943b2aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &668237446611877778
 MonoBehaviour:
   m_ObjectHideFlags: 0

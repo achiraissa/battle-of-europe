@@ -12,6 +12,9 @@ public class MainUI : MonoBehaviour
     [SerializeField] private RectTransform selectionBox;
     public RectTransform SelectionBox { get { return selectionBox; } }
 
+    private Canvas canvas;
+    public Canvas Canvas { get { return canvas; } }
+
     public static MainUI instance;
 
     [SerializeField] private TextMeshProUGUI unitCountText;
@@ -23,12 +26,19 @@ public class MainUI : MonoBehaviour
     void Awake()
     {
         instance = this;
+        canvas = GetComponent<Canvas>();
     }
-    // Start is called before the first frame update
-    void Start()
+    public Vector3 ScalePosition(Vector3 pos)
     {
-        
+        Vector3 newPos;
+
+        newPos = new Vector3(pos.x * canvas.transform.localScale.x
+                             , pos.y * canvas.transform.localScale.y
+                             , pos.z * canvas.transform.localScale.z);
+
+        return newPos;
     }
+
     public void UpdateAllResource(Faction faction)
     {
         unitCountText.text = $"{faction.AliveUnits.Count}/{faction.UnitLimit}";
