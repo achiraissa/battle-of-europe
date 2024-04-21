@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7121795831480616108}
   - component: {fileID: 4734490232529270793}
+  - component: {fileID: 3069508990428525586}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,3 +50,15 @@ MonoBehaviour:
   factions:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &3069508990428525586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113679049631241403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e9da7342a42294ba12d5b2b378bfb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
