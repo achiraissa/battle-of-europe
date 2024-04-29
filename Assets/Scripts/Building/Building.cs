@@ -11,6 +11,7 @@ public class Building : Structure
 
     [SerializeField] private GameObject[] unitPrefabs;
     public GameObject[] UnitPrefabs { get { return unitPrefabs; } }
+
     [SerializeField] private List<Unit> recruitList = new List<Unit>();
 
     [SerializeField] private float unitTimer = 0f;
@@ -38,6 +39,53 @@ public class Building : Structure
     private float waitTime = 0.5f; //How fast it will be construct, higher is longer
     public float WaitTime { get { return waitTime; } set { waitTime = value; } }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+
+        if ((recruitList.Count > 0) && (recruitList[0] != null))
+        {
+            unitTimer += Time.deltaTime;
+            curUnitWaitTime = recruitList[0].UnitWaitTime;
+
+            if (unitTimer >= curUnitWaitTime)
+            {
+                curUnitProgress++;
+                unitTimer = 0f;
+
+                if (curUnitProgress >= 100 && (faction.AliveUnits.Count < faction.UnitLimit))
+                {
+                    curUnitProgress = 0;
+                    curUnitWaitTime = 0f;
+                    CreateUnitCompleted();
+                }
+            }
+        }
+
+        if ((recruitList.Count > 1) && (recruitList[1] != null))
+        {
+            unitTimer += Time.deltaTime;
+            curUnitWaitTime = recruitList[1].UnitWaitTime;
+
+            if (unitTimer >= curUnitWaitTime)
+            {
+                curUnitProgress++;
+                unitTimer = 0f;
+
+                if (curUnitProgress >= 100 && (faction.AliveUnits.Count < faction.UnitLimit))
+                {
+                    curUnitProgress = 0;
+                    curUnitWaitTime = 0f;
+                    CreateUnitCompleted();
+                }
+            }
+        }
+    }
     public void ToCreateUnit(int i)
     {
         Debug.Log(structureName + " creates " + i + ":" + unitPrefabs.Length);
@@ -124,54 +172,6 @@ public class Building : Structure
         base.Die();
 
         //Check Victory Condition
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-       
-        if ((recruitList.Count > 0) && (recruitList[0] != null))
-        {
-            unitTimer += Time.deltaTime;
-            curUnitWaitTime = recruitList[0].UnitWaitTime;
-
-            if (unitTimer >= curUnitWaitTime)
-            {
-                curUnitProgress++;
-                unitTimer = 0f;
-
-                if (curUnitProgress >= 100)
-                {
-                    curUnitProgress = 0;
-                    curUnitWaitTime = 0f;
-                    CreateUnitCompleted();
-                }
-            }
-        }
-
-        if ((recruitList.Count > 1) && (recruitList[1] != null))
-        {
-            unitTimer += Time.deltaTime;
-            curUnitWaitTime = recruitList[1].UnitWaitTime;
-
-            if (unitTimer >= curUnitWaitTime)
-            {
-                curUnitProgress++;
-                unitTimer = 0f;
-
-                if (curUnitProgress >= 100 && (faction.AliveUnits.Count < faction.UnitLimit))
-                {
-                    curUnitProgress = 0;
-                    curUnitWaitTime = 0f;
-                    CreateUnitCompleted();
-                }
-            }
-        }
     }
 
 }

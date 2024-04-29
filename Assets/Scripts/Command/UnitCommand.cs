@@ -9,6 +9,28 @@ public class UnitCommand : MonoBehaviour
 
     private Camera cam;
 
+    void Awake()
+    {
+        unitSelect = GetComponent<UnitSelect>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        cam = Camera.main;
+
+        layerMask = LayerMask.GetMask("Unit", "Building", "Resource", "Ground");
+    }
+
+    void Update()
+    {
+        // mouse up
+        if (Input.GetMouseButtonUp(1))
+        {
+            TryCommand(Input.mousePosition);
+        }
+    }
+
     private void UnitsMoveToPosition(Vector3 dest, List<Unit> units)
     {
         foreach(Unit u in units)
@@ -125,28 +147,6 @@ public class UnitCommand : MonoBehaviour
         {
             if (u.IsBuilder)
                 u.Builder.BuilderStartFixBuilding(target);
-        }
-    }
-
-    void Awake()
-    {
-        unitSelect = GetComponent<UnitSelect>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        cam = Camera.main;
-
-        layerMask = LayerMask.GetMask("Unit", "Building", "Resource", "Ground");
-    }
-
-    void Update()
-    {
-        // mouse up
-        if (Input.GetMouseButtonUp(1))
-        {
-            TryCommand(Input.mousePosition);
         }
     }
 }

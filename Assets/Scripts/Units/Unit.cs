@@ -118,6 +118,37 @@ public class Unit : MonoBehaviour
     private float lastPathUpdateTime;
     public float LastPathUpdateTime { get { return lastPathUpdateTime; } set { lastPathUpdateTime = value; } }
 
+    void Awake()
+    {
+        navAgent = GetComponent<NavMeshAgent>();
+
+        if (IsBuilder)
+            builder = GetComponent<Builder>();
+
+        if (IsWorker)
+            worker = GetComponent<Worker>();
+    }
+    void Update()
+    {
+        switch (state)
+        {
+            case UnitState.Move:
+                MoveUpdate();
+                break;
+            case UnitState.MoveToEnemy:
+                MoveToEnemyUpdate();
+                break;
+            case UnitState.AttackUnit:
+                AttackUpdate();
+                break;
+            case UnitState.MoveToEnemyBuilding:
+                MoveToEnemyBuildingUpdate();
+                break;
+            case UnitState.AttackBuilding:
+                AttackBuildingUpdate();
+                break;
+        }
+    }
 
     public void ToggleSelectionVisual(bool flag)
     {
@@ -359,35 +390,4 @@ public class Unit : MonoBehaviour
         }
     }   
 
-    void Awake()
-    {
-        navAgent = GetComponent<NavMeshAgent>();
-
-        if(IsBuilder)
-            builder = GetComponent<Builder>();
-
-        if(IsWorker)
-            worker = GetComponent<Worker>();
-    }
-    void Update()
-    {
-        switch (state)
-        {
-            case UnitState.Move:
-                MoveUpdate();
-                break;
-            case UnitState.MoveToEnemy:
-                MoveToEnemyUpdate();
-                break;
-            case UnitState.AttackUnit:
-                AttackUpdate();
-                break;
-            case UnitState.MoveToEnemyBuilding:
-                MoveToEnemyBuildingUpdate();
-                break;
-            case UnitState.AttackBuilding:
-                AttackBuildingUpdate();
-                break;
-        }
-    }
 }

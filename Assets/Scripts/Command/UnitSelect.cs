@@ -39,6 +39,58 @@ public class UnitSelect : MonoBehaviour
     {
         faction = GetComponent<Faction>();
     }
+        
+    void Start()
+    {
+        cam = Camera.main;
+        layerMask = LayerMask.GetMask("Unit", "Building", "Resource", "Ground");
+
+        selectionBox = MainUI.instance.SelectionBox;
+
+        instance = this;
+    }
+
+    void Update()
+    {
+        //mouse down
+        if (Input.GetMouseButtonDown(0))
+        {
+            startPos = Input.mousePosition;
+
+            //if click Ui, don't clear
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+            ClearEverything();
+        }
+
+        // mouse held down
+        if (Input.GetMouseButton(0))
+        {
+            //Debug.Log("Mouse held down");
+            UpdateSelectionBox(Input.mousePosition);
+        }
+
+        // mouse up
+        if (Input.GetMouseButtonUp(0))
+        {
+            ReleaseSelectionBox(Input.mousePosition);
+
+            if (IsPointerOverUIObject())
+                return;
+
+            TrySelect(Input.mousePosition);
+        }
+
+        timer += Time.deltaTime;
+
+        if (timer >= timeLimit)
+        {
+            timer = 0f;
+            UpdateUI();
+        }
+    }
 
     private void SelectUnit(RaycastHit hit)
     {
@@ -231,54 +283,5 @@ public class UnitSelect : MonoBehaviour
         return results.Count > 0;
     }
 
-    void Start()
-    {
-        cam = Camera.main;
-        layerMask = LayerMask.GetMask("Unit", "Building", "Resource", "Ground");
-
-        selectionBox = MainUI.instance.SelectionBox;
-
-        instance = this;
-    }
-    void Update()
-    {
-        //mouse down
-        if (Input.GetMouseButtonDown(0))
-        {
-            startPos = Input.mousePosition;
-
-            //if click Ui, don't clear
-            if (EventSystem.current.IsPointerOverGameObject())
-            {
-                return;
-            }
-            ClearEverything();
-        }
-
-        // mouse held down
-        if (Input.GetMouseButton(0))
-        {
-            //Debug.Log("Mouse held down");
-            UpdateSelectionBox(Input.mousePosition);
-        }
-
-        // mouse up
-        if (Input.GetMouseButtonUp(0))
-        {
-            ReleaseSelectionBox(Input.mousePosition);
-
-            if (IsPointerOverUIObject())
-                return;
-
-            TrySelect(Input.mousePosition);
-        }
-
-        timer += Time.deltaTime;
-
-        if(timer >= timeLimit)
-        {
-            timer = 0f;
-            UpdateUI();
-        }
-    }
+    
 }

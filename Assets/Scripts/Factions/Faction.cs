@@ -50,6 +50,7 @@ public class Faction : MonoBehaviour
 
     [SerializeField]
     private int newResourceRange = 50; //range for worker to find new resource
+
     [SerializeField] private GameObject[] buildingPrefabs;
     public GameObject[] BuildingPrefabs { get { return buildingPrefabs; } }
 
@@ -119,9 +120,7 @@ public class Faction : MonoBehaviour
         else if (unitLimit < 0)
             unitLimit = 0;
 
-
-        if (this == GameManager.instance.MyFaction)
-            MainUI.instance.UpdateAllResource(this);
+        MainUI.instance.UpdateAllResource(this);
     }
 
     public bool CheckUnitCost(Unit unit)
@@ -140,6 +139,7 @@ public class Faction : MonoBehaviour
 
         return true;
     }
+
     public void DeductUnitCost(Unit unit)
     {
         food -= unit.UnitCost.food;

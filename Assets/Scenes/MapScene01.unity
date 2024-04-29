@@ -5742,6 +5742,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1337794882}
     m_Modifications:
     - target: {fileID: 535602203653651140, guid: 80ae827594b60cc4e8b18cdaa19edd60, type: 3}
+      propertyPath: curHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 535602203653651140, guid: 80ae827594b60cc4e8b18cdaa19edd60, type: 3}
+      propertyPath: faction
+      value: 
+      objectReference: {fileID: 640606636}
+    - target: {fileID: 535602203653651140, guid: 80ae827594b60cc4e8b18cdaa19edd60, type: 3}
       propertyPath: isFunctional
       value: 1
       objectReference: {fileID: 0}
