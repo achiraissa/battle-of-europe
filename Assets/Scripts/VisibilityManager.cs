@@ -13,13 +13,29 @@ public class VisibilityManager : MonoBehaviour
 
     public static VisibilityManager instance;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        instance = this;
+        AssignBlips();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        time = Time.deltaTime;
+        if (time >= timeLimit)
+        {
+            time = 0;
+            AssignBlips();
+        }
+    }
+
     private void CheckVisibility(List<MiniMapBlip> myUnitBlips, List<MiniMapBlip> targetBlips)
     {
         foreach (MiniMapBlip targetBlip in targetBlips)
         {
             bool seen = false;
-
-
 
             foreach (MiniMapBlip myBlip in myUnitBlips)
             {
@@ -85,21 +101,4 @@ public class VisibilityManager : MonoBehaviour
         CheckVisibility(myUnitBlips, enemyBuildingBlips);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        instance = this;
-        AssignBlips();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        time = Time.deltaTime;
-        if(time >= timeLimit)
-        {
-            time = 0;
-            AssignBlips();
-        }
-    }
 }
