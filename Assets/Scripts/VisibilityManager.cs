@@ -23,7 +23,7 @@ public class VisibilityManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time = Time.deltaTime;
+        time += Time.deltaTime;
         if (time >= timeLimit)
         {
             time = 0;
@@ -36,6 +36,8 @@ public class VisibilityManager : MonoBehaviour
         foreach (MiniMapBlip targetBlip in targetBlips)
         {
             bool seen = false;
+
+
 
             foreach (MiniMapBlip myBlip in myUnitBlips)
             {
